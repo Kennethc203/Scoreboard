@@ -16,8 +16,8 @@ public class Scoreboard {
         }
     }
     public String winner(){
-        if (team1.getPoints() > team2.getPoints()) return "" + team1;
-        else if (team2.getPoints() > team1.getPoints()) return "" + team2;
+        if (team1.getPoints() > team2.getPoints()) return team1.getName();
+        else if (team2.getPoints() > team1.getPoints()) return team2.getName();
         else return "";
     }
     public int winnerPoints(){

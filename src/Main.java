@@ -20,6 +20,7 @@ public class Main {
             winners[i] = boardOfScore.winner();
             winnerPoints[i] = boardOfScore.winnerPoints();
             System.out.println(winners[i]);
+            System.out.println("");
             System.out.println(winnerPoints[i]);
         }
     }
