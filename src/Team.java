@@ -13,7 +13,7 @@ public class Team {
     public String toString(){
         return name;
     }
-    public String getName(){
+    public String getName() {
         return name;
     }
 }

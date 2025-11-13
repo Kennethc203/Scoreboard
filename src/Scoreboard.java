@@ -15,14 +15,17 @@ public class Scoreboard {
             else active = team2;
         }
     }
-    public String winner(){
-        if (team1.getPoints() > team2.getPoints()) return team1.getName();
-        else if (team2.getPoints() > team1.getPoints()) return team2.getName();
-        else return "";
-    }
-    public int winnerPoints(){
-        if (team1.getPoints() > team2.getPoints()) return team1.getPoints();
-        else if (team2.getPoints() > team1.getPoints()) return team2.getPoints();
-        else return 0;
+    public Team winner(){
+        Team winner = new Team("");
+        if (team1.getPoints() > team2.getPoints()){
+            winner = new Team(team1.getName());
+            winner.addPoints(team1.getPoints());
+        }
+        else if (team2.getPoints() > team1.getPoints()){
+            winner = new Team(team2.getName());
+            winner.addPoints(team2.getPoints());
+        }
+        return winner;
+
     }
 }
