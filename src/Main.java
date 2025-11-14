@@ -12,26 +12,28 @@ public class Main {
         colors[5] = "Violet";
         colors[6] = "Green";
         int[] wins = new int[7];
-        File filliac = new File("Scoreboard.txt");
-        Scanner s = new Scanner(filliac);
+        File f = new File("Scoreboard.txt");
+        Scanner s = new Scanner(f);
         Team team1;
         Team team2;
         Team winner;
-        Scoreboard boardOfScore;
+        Scoreboard scoreboard;
         for (int i = 0; i < 1000; i++){
             team1 = new Team(s.next());
             team2 = new Team(s.next());
-            boardOfScore = new Scoreboard("" + team1, "" + team2);
+            scoreboard = new Scoreboard(team1, team2);
             while (s.hasNextInt()){
-                boardOfScore.play(s.nextInt());
+                scoreboard.play(s.nextInt());
             }
-            winner = boardOfScore.winner();
+            winner = scoreboard.winner();
             for (int j = 0; j < colors.length; j++){
                 if (colors[j].equals(winner.getName())){
                     wins[j]++;
+                    System.out.println(winner.getName());
                 }
             }
         }
+        System.out.println();
         for (int i = 0; i < colors.length; i++){
             System.out.println(" " + colors[i] + " " + wins[i]);
         }
