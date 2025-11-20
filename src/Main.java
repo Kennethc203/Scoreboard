@@ -39,7 +39,6 @@ public class Main {
         String team1 = "";
         String team2 = "";
         Scoreboard match;
-        int winner = 0;
         String winnerName = "";
         File f = new File("Scoreboard.txt");
         Scanner s = new Scanner(f);
@@ -49,13 +48,13 @@ public class Main {
             match = new Scoreboard(team1, team2);
             while (s.hasNextInt()) match.recordPlay(s.nextInt());
             winnerName = match.returnWinner();
-            winner = match.returnWinnerPoints();
             for (int i = 0; i < teams.length; i++){
                 if (winnerName.equals(teams[i])) {
                     teamsWins[i] += 1;
                 }
             }
         }
+        System.out.println();
         for (int i = 0; i < teams.length; i++){
             System.out.println(teams[i] + " "+ teamsWins[i]);
         }
